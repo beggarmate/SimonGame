@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simon Game</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header-main">
+        <h1 class="header-main__title">This my Simon's Game!</h1>
+      </header>
+      <main>
+        <div class="game-wrapper">
+          <div class="game-content">
+            <div class="round">
+              <div data-id="1" class="round__button round__button1"></div>
+              <div data-id="2" class="round__button round__button2"></div>
+              <div data-id="3" class="round__button round__button3"></div>
+              <div data-id="4" class="round__button round__button4"></div>
+            </div>
+          </div>
+          <div class="game--interface">
+            <div class="score-box">
+              Очков набрано:
+              <span class="score__value">0</span>
+            </div>
+            <div class="game__buttons">
+              <div class="start">Начать игру</div>
+              <div class="restart button__none">Начать сначала</div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+    <script src="script/script.js"></script>
+  </body>
+</html>

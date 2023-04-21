@@ -1,0 +1,115 @@
+@import url(/css/nullstyle.css);
+body {
+  font-size: 30px;
+  color: white;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 2fr 8fr 1fr;
+}
+
+.header-main {
+  background: rgb(131, 1, 103);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  background: rgb(51, 44, 48);
+}
+
+.footer {
+  background: rgb(131, 1, 103);
+}
+
+.game-wrapper {
+  min-width: 400px;
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  background: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.game--interface {
+  padding-top: 100px;
+  background: rgb(105, 8, 114);
+}
+
+.score-box {
+  padding-left: 50px;
+  margin-bottom: 50px;
+}
+
+.start,
+.restart {
+  cursor: pointer;
+  color: white;
+  padding-top: 30px;
+  min-height: 100px;
+  max-width: 250px;
+  background: black;
+  border: 1px solid white;
+  text-align: center;
+  border-radius: 20%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px 5px black;
+}
+.start:hover,
+.restart:hover {
+  box-shadow: 1px 1px 5px 9px black;
+}
+.start:active,
+.restart:active {
+  box-shadow: 1px 1px 5px 13px black;
+}
+
+.button__none {
+  display: none;
+}
+
+.game-content {
+  background: rgb(70, 55, 64);
+  padding-top: 50px;
+}
+
+.round {
+  overflow: hidden;
+  border: 3px solid red;
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.round__button1 {
+  background: green;
+}
+
+.round__button2 {
+  background: red;
+}
+
+.round__button3 {
+  background: blue;
+}
+
+.round__button4 {
+  background: yellow;
+}
+
+.round__button-activited {
+  background: white;
+}
+
+.round__button-hover:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 400ms;
+}
