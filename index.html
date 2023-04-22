@@ -8,33 +8,56 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="header-main">
-        <h1 class="header-main__title">This my Simon's Game!</h1>
-      </header>
-      <main>
-        <div class="game-wrapper">
-          <div class="game-content">
-            <div class="round">
-              <div data-id="1" class="round__button round__button1"></div>
-              <div data-id="2" class="round__button round__button2"></div>
-              <div data-id="3" class="round__button round__button3"></div>
-              <div data-id="4" class="round__button round__button4"></div>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__row">
+            <div class="header__logo">
+              <img
+                src="https://play-lh.googleusercontent.com/NuXcZ9Ls5mTBy701WARHh0XfPm-82o9BA4esG-WzZIu-DBbuIuEfjX3SojobcnuSOjs"
+                alt="game logo"
+              />
+            </div>
+            <div class="header__title">
+              <span>This my Simon Game!</span>
             </div>
           </div>
-          <div class="game--interface">
-            <div class="score-box">
-              Очков набрано:
-              <span class="score__value">0</span>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <div class="modal__window display-none"></div>
+          <div class="loss__box display-none">
+            <span class="loss__message">Вы проиграли :( </span>
+            <span class="loss__message-value"></span>
+            <div class="return-game-interfase__button">Закрыть</div>
+          </div>
+          <div class="game-interface">
+            <div class="round__wrapper">
+              <div class="game__round">
+                <div data-id="1" class="round__button round__button1"></div>
+                <div data-id="2" class="round__button round__button2"></div>
+                <div data-id="3" class="round__button round__button3"></div>
+                <div data-id="4" class="round__button round__button4"></div>
+              </div>
             </div>
-            <div class="game__buttons">
-              <div class="start">Начать игру</div>
-              <div class="restart button__none">Начать сначала</div>
+            <div class="game__control">
+              <div class="score-box">
+                <p class="score__item">
+                  Очков набрано:
+                  <span class="score__value">0</span>
+                </p>
+              </div>
+              <div class="game__buttons">
+                <div class="game__button start__button">Начать игру</div>
+                <div class="game__button restart__button display-none">
+                  Начать сначала
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </main>
-      <footer class="footer"></footer>
     </div>
     <script src="script/script.js"></script>
   </body>

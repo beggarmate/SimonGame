@@ -1,8 +1,14 @@
 const gameButtons = document.body.querySelector(".game__buttons");
-const startGameButtons = document.body.querySelector(".start");
-const restartGameButtons = document.body.querySelector(".restart");
-const round = document.body.querySelector(".round");
+const startGameButtons = document.body.querySelector(".start__button");
+const restartGameButtons = document.body.querySelector(".restart__button");
+const round = document.body.querySelector(".game__round");
 const scoreElement = document.body.querySelector(".score__value");
+const lossBox = document.body.querySelector(".loss__box");
+const modale__window = document.body.querySelector(".modal__window");
+const returnGameInterfaseButton = document.body.querySelector(
+  ".return-game-interfase__button"
+);
+const lossMessage = document.body.querySelector(".loss__message-value");
 
 const systemAnswer = [];
 const userAnswer = [];
@@ -13,11 +19,24 @@ const clearSystemButtonsTimeouts = () => {
   timeouts.length = 0;
 };
 
+const showLossMeassage = () => {
+  lossMessage.textContent = `Очков набрано: ${scoreElement.textContent}`;
+  modale__window.classList.remove("display-none");
+  lossBox.classList.remove("display-none");
+};
+
+const removeLossMessage = () => {
+  modale__window.classList.add("display-none");
+  lossBox.classList.add("display-none");
+};
+
+returnGameInterfaseButton.addEventListener("mouseup", removeLossMessage);
+
 const soundPaths = {
-  1: "/sound/zvuk-notyi-do-vtoraya-oktava.mp3",
-  2: "/sound/zvuk-notyi-fa-vtoraya-oktava.mp3",
-  3: "/sound/zvuk-notyi-lya-pervaya-oktava.mp3",
-  4: "/sound/zvuk-notyi-mi-pervaya-oktava.mp3",
+  1: "https://beggarmate.github.io/SimonGame/sound/zvuk-notyi-do-vtoraya-oktava.mp3",
+  2: "https://beggarmate.github.io/SimonGame/sound/zvuk-notyi-fa-vtoraya-oktava.mp3",
+  3: "https://beggarmate.github.io/SimonGame/sound/zvuk-notyi-lya-pervaya-oktava.mp3",
+  4: "https://beggarmate.github.io/SimonGame/sound/zvuk-notyi-mi-pervaya-oktava.mp3",
 };
 
 const resetData = () => {
@@ -29,6 +48,7 @@ const resetData = () => {
 };
 
 const gameOver = () => {
+  showLossMeassage();
   resetData();
   round.removeEventListener("click", roundEvent);
 };
@@ -91,8 +111,8 @@ const removePointerForButton = () => {
 };
 
 const swapButtonStartRestart = () => {
-  startGameButtons.classList.add("button__none");
-  restartGameButtons.classList.remove("button__none");
+  startGameButtons.classList.add("display-none");
+  restartGameButtons.classList.remove("display-none");
 };
 
 const createRandomNumber = () => {
@@ -125,7 +145,7 @@ const selectButtonHighlighter = (numberButton) => {
   }, delay);
   setTimeout(() => {
     button.classList.toggle("round__button-activited");
-  }, delay + 750);
+  }, delay + 250);
 };
 
 const systemPressedButton = () => {
@@ -136,7 +156,7 @@ const systemPressedButton = () => {
       selectButtonHighlighter(item);
     }, delay);
     timeouts.push(timeout);
-    delay += 950;
+    delay += 450;
   });
   setTimeout(createRoundEvent, delay);
 };
@@ -150,7 +170,6 @@ const gameProcess = () => {
 const startGame = (event) => {
   const { target } = event;
   if (target === restartGameButtons) {
-    console.log(123);
     resetData();
   }
   gameProcess();
