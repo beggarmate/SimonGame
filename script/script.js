@@ -4,7 +4,7 @@ const restartGameButtons = document.body.querySelector(".restart__button");
 const round = document.body.querySelector(".game__round");
 const scoreElement = document.body.querySelector(".score__value");
 const lossBox = document.body.querySelector(".loss__box");
-const modale__window = document.body.querySelector(".modal__window");
+const modalWindow = document.body.querySelector(".modal__window");
 const returnGameInterfaseButton = document.body.querySelector(
   ".return-game-interfase__button"
 );
@@ -21,12 +21,12 @@ const clearSystemButtonsTimeouts = () => {
 
 const showLossMeassage = () => {
   lossMessage.textContent = `Очков набрано: ${scoreElement.textContent}`;
-  modale__window.classList.remove("display-none");
+  modalWindow.classList.remove("display-none");
   lossBox.classList.remove("display-none");
 };
 
 const removeLossMessage = () => {
-  modale__window.classList.add("display-none");
+  modalWindow.classList.add("display-none");
   lossBox.classList.add("display-none");
 };
 
